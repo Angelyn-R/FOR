@@ -22,7 +22,6 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField SystemName;
-	private JTextField studenQrCode;
 
 	/**
 	 * Launch the application.
@@ -59,18 +58,34 @@ public class MainFrame extends JFrame {
 		contentPane.add(SystemName);
 		SystemName.setColumns(10);
 		
-		studenQrCode = new JTextField();
-		studenQrCode.setText("Please scan your QR here");
-		studenQrCode.setBounds(258, 226, 159, 118);
-		contentPane.add(studenQrCode);
-		studenQrCode.setColumns(10);
+		JButton borrowButton = new JButton("Borrow Book");
+		borrowButton.setBounds(119, 232, 141, 23);
+		borrowButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		borrowButton.setBackground(new Color(255, 250, 205));
+		borrowButton.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        BorrowBook frame2 = new BorrowBook();  // Assuming this is the new frame for borrowing books
+		        frame2.setVisible(true);
+		        dispose();  // Close current frame
+		    }
+		});
+		contentPane.add(borrowButton);
 		
-		JButton btnNewButton = new JButton("OK");
-		btnNewButton.setBounds(300, 381, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton returnButton = new JButton("Return Book");
+		returnButton.setBounds(394, 232, 141, 23);
+		returnButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		returnButton.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        ReturnBook frame2 = new ReturnBook();  // Assuming this is the new frame for borrowing books
+		        frame2.setVisible(true);
+		        dispose();  // Close current frame
+		    }
+		});
+		contentPane.add(returnButton);
 		
-		JButton btnAdmin = new JButton("ADMIN");
-		btnAdmin.setBounds(569, 28, 89, 23);
-		contentPane.add(btnAdmin);
+		JButton registerButton = new JButton("Register");
+		registerButton.setBounds(291, 335, 89, 23);
+		contentPane.add(registerButton);
+		
 	}
 }

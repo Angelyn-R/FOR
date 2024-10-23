@@ -64,9 +64,9 @@ public class MainFrame extends JFrame {
 		borrowButton.setBackground(new Color(255, 250, 205));
 		borrowButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		        BorrowBook frame2 = new BorrowBook();  // Assuming this is the new frame for borrowing books
+		        BorrowBook frame2 = new BorrowBook();  
 		        frame2.setVisible(true);
-		        dispose();  // Close current frame
+		        dispose();  
 		    }
 		});
 		contentPane.add(borrowButton);
@@ -76,15 +76,24 @@ public class MainFrame extends JFrame {
 		returnButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		returnButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		        ReturnBook frame2 = new ReturnBook();  // Assuming this is the new frame for borrowing books
+		        ReturnBook frame2 = new ReturnBook();  
 		        frame2.setVisible(true);
-		        dispose();  // Close current frame
+		        dispose();  
 		    }
 		});
 		contentPane.add(returnButton);
 		
 		JButton registerButton = new JButton("Register");
 		registerButton.setBounds(291, 335, 89, 23);
+		registerButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		registerButton.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        ReturnBook frame2 = new ReturnBook();  
+		        frame2.setVisible(true);
+		        dispose();  
+		    }
+		});
+		
 		contentPane.add(registerButton);
 		
 	}

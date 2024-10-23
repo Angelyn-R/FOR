@@ -1,4 +1,6 @@
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -42,6 +44,13 @@ public class AdminMainFrame extends JFrame {
 		
 		JButton btnAddBooks = new JButton("Add Books");
 		btnAddBooks.setBounds(38, 178, 89, 23);
+		btnAddBooks.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        AddBooksFrame frame2 = new  AddBooksFrame();  
+		        frame2.setVisible(true);
+		        dispose();  
+		    }
+		});
 		contentPane.add(btnAddBooks);
 		
 		JButton btnAddStudent = new JButton("Add Student");

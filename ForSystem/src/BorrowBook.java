@@ -6,6 +6,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Color;
 
 public class BorrowBook extends JFrame {
 
@@ -34,7 +38,7 @@ public class BorrowBook extends JFrame {
 	 */
 	public BorrowBook() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 812, 504);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -42,17 +46,35 @@ public class BorrowBook extends JFrame {
 		contentPane.setLayout(null);
 		
 		BookIsbnBorrow = new JTextField();
-		BookIsbnBorrow.setBounds(44, 112, 329, 20);
+		BookIsbnBorrow.setBounds(120, 119, 359, 54);
 		contentPane.add(BookIsbnBorrow);
 		BookIsbnBorrow.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Scan Bar Code for ISBN");
-		lblNewLabel.setBounds(45, 87, 159, 14);
+		lblNewLabel.setBounds(297, 52, 275, 23);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblNewLabel);
 		
 		JButton btnConfirmBorrow = new JButton("BORROW");
-		btnConfirmBorrow.setBounds(169, 227, 89, 23);
+		btnConfirmBorrow.setBounds(370, 384, 141, 43);
+		btnConfirmBorrow.setBackground(new Color(240, 240, 240));
 		contentPane.add(btnConfirmBorrow);
+		
+		JButton confirmBorrow = new JButton("Confirm");
+		confirmBorrow.setBackground(new Color(240, 240, 240));
+		confirmBorrow.setBounds(517, 125, 141, 43);
+		contentPane.add(confirmBorrow);
+		
+		JButton borrowBackButton = new JButton("Back");
+		borrowBackButton.setBounds(10, 431, 89, 23);
+		borrowBackButton.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        MainFrame frame2 = new MainFrame();  
+		        frame2.setVisible(true);
+		        dispose();  
+		    }
+		});
+		contentPane.add(borrowBackButton);
 	}
 
 }

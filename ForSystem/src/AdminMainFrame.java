@@ -35,7 +35,7 @@ public class AdminMainFrame extends JFrame {
 	 */
 	public AdminMainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 818, 498);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -43,7 +43,7 @@ public class AdminMainFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnAddBooks = new JButton("Add Books");
-		btnAddBooks.setBounds(38, 178, 89, 23);
+		btnAddBooks.setBounds(116, 295, 141, 43);
 		btnAddBooks.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        AddBooksFrame frame2 = new  AddBooksFrame();  
@@ -53,13 +53,20 @@ public class AdminMainFrame extends JFrame {
 		});
 		contentPane.add(btnAddBooks);
 		
-		JButton btnAddStudent = new JButton("Add Student");
-		btnAddStudent.setBounds(167, 178, 117, 23);
-		contentPane.add(btnAddStudent);
-		
-		JButton btnViewHistory = new JButton("View History");
-		btnViewHistory.setBounds(294, 178, 107, 23);
+		JButton btnViewHistory = new JButton("Records");
+		btnViewHistory.setBounds(529, 295, 141, 43);
 		contentPane.add(btnViewHistory);
+		
+		JButton backButton = new JButton("Back");
+		backButton.setBounds(10, 425, 89, 23);
+		backButton.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        MainFrame frame2 = new MainFrame();  
+		        frame2.setVisible(true);
+		        dispose();  
+		    }
+		});
+		contentPane.add(backButton);
 	}
 
 }

@@ -7,6 +7,8 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AddBooksFrame extends JFrame {
 
@@ -97,9 +99,16 @@ public class AddBooksFrame extends JFrame {
 		ButtonUpdateBooks.setBounds(325, 365, 141, 43);
 		contentPane.add(ButtonUpdateBooks);
 		
-		JButton btnNewButton = new JButton("Back");
-		btnNewButton.setBounds(10, 440, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton backAddBooks = new JButton("Back");
+		backAddBooks.setBounds(10, 440, 89, 23);
+		backAddBooks.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        AdminMainFrame frame2 = new AdminMainFrame();  
+		        frame2.setVisible(true);
+		        dispose();  
+		    }
+		});
+		contentPane.add(backAddBooks);
 	}
 
 }

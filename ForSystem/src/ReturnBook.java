@@ -9,12 +9,14 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 
 public class ReturnBook extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField BookIsbnReturn;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -45,26 +47,36 @@ public class ReturnBook extends JFrame {
 		contentPane.setLayout(null);
 		
 		BookIsbnReturn = new JTextField();
-		BookIsbnReturn.setBounds(120, 119, 359, 54);
+		BookIsbnReturn.setBounds(115, 251, 359, 54);
 		contentPane.add(BookIsbnReturn);
 		BookIsbnReturn.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Scan Bar Code for ISBN");
+		lblNewLabel.setBounds(115, 217, 275, 23);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(297, 52, 275, 23);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnConfirmReturn = new JButton("RETURN");
-		btnConfirmReturn.setBounds(370, 384, 141, 43);
+		btnConfirmReturn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnConfirmReturn.setBounds(365, 363, 141, 43);
+		btnConfirmReturn.setBackground(new Color(192, 192, 192));
 		contentPane.add(btnConfirmReturn);
 		
 		JButton confirmReturn = new JButton("Confirm");
-		confirmReturn.setBounds(530, 135, 89, 23);
-		confirmReturn.setBounds(517, 125, 141, 43);
+		confirmReturn.setBounds(488, 257, 141, 43);
+		confirmReturn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		confirmReturn.setBackground(new Color(255, 255, 255));
 		contentPane.add(confirmReturn);
 		
 		JButton returnBackButton = new JButton("Back");
 		returnBackButton.setBounds(10, 428, 89, 23);
+		returnBackButton.setBackground(new Color(255, 255, 255));
 		returnBackButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        MainFrame frame2 = new MainFrame();  
@@ -73,6 +85,21 @@ public class ReturnBook extends JFrame {
 		    }
 		});
 		contentPane.add(returnBackButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("Enter Student ID Number");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(115, 124, 243, 34);
+		contentPane.add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(115, 163, 359, 43);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("RETURN");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel_2.setBounds(372, 49, 134, 23);
+		contentPane.add(lblNewLabel_2);
 	}
 
 }

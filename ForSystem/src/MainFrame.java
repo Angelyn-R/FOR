@@ -83,7 +83,7 @@ public class MainFrame extends JFrame {
 		registerButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		registerButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		        ReturnBook frame2 = new ReturnBook();  
+		        Register frame2 = new Register();  
 		        frame2.setVisible(true);
 		        dispose();  
 		    }

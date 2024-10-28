@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class AdminMainFrame extends JFrame {
 
@@ -35,15 +36,15 @@ public class AdminMainFrame extends JFrame {
 	 */
 	public AdminMainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 818, 498);
+		setBounds(100, 100, 780, 498);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JButton btnAddBooks = new JButton("Add Books");
-		btnAddBooks.setBounds(116, 295, 141, 43);
+		btnAddBooks.setBackground(new Color(128, 128, 128));
+		btnAddBooks.setBounds(166, 295, 141, 43);
 		btnAddBooks.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        AddBooksFrame frame2 = new  AddBooksFrame();  
@@ -51,22 +52,32 @@ public class AdminMainFrame extends JFrame {
 		        dispose();  
 		    }
 		});
+		contentPane.setLayout(null);
 		contentPane.add(btnAddBooks);
 		
 		JButton btnViewHistory = new JButton("Records");
-		btnViewHistory.setBounds(529, 295, 141, 43);
+		btnViewHistory.setBackground(new Color(128, 128, 128));
+		btnViewHistory.setBounds(487, 295, 141, 43);
+		btnViewHistory.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		       Record frame2 = new Record();  
+		        frame2.setVisible(true);
+		        dispose();  
+		    }
+		});
 		contentPane.add(btnViewHistory);
 		
-		JButton backButton = new JButton("Back");
-		backButton.setBounds(10, 425, 89, 23);
-		backButton.addActionListener(new ActionListener() {
+		JButton LogOutButton = new JButton("Log out");
+		LogOutButton.setBounds(658, 11, 96, 35);
+		LogOutButton.setBackground(new Color(192, 192, 192));
+		LogOutButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        MainFrame frame2 = new MainFrame();  
 		        frame2.setVisible(true);
 		        dispose();  
 		    }
 		});
-		contentPane.add(backButton);
+		contentPane.add(LogOutButton);
 	}
 
 }

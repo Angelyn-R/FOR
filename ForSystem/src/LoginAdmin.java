@@ -57,7 +57,7 @@ public class LoginAdmin extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnLogIn = new JButton("LOG IN");
-		btnLogIn.setBackground(new Color(255, 255, 255));
+		btnLogIn.setBackground(new Color(192, 192, 192));
 		btnLogIn.setBounds(289, 158, 93, 35);
 		btnLogIn.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {

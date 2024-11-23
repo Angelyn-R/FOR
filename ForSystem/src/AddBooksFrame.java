@@ -9,6 +9,9 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.JInternalFrame;
 
 public class AddBooksFrame extends JFrame {
 
@@ -40,7 +43,8 @@ public class AddBooksFrame extends JFrame {
 	 */
 	public AddBooksFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 819, 513);
+		//setBounds(100, 100, 819, 513);
+		setBounds(0, 0, 1366, 768);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -100,7 +104,7 @@ public class AddBooksFrame extends JFrame {
 		contentPane.add(ButtonUpdateBooks);
 		
 		JButton backAddBooks = new JButton("Back");
-		backAddBooks.setBounds(10, 440, 89, 23);
+		backAddBooks.setBounds(34, 609, 89, 23);
 		backAddBooks.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        AdminMainFrame frame2 = new AdminMainFrame();  
@@ -109,6 +113,45 @@ public class AddBooksFrame extends JFrame {
 		    }
 		});
 		contentPane.add(backAddBooks);
-	}
+		
+		JLabel lblNewLabel_4 = new JLabel("ADD DELETE UPDATE BOOKS");
+		lblNewLabel_4.setBounds(463, 25, 324, 54);
+		contentPane.add(lblNewLabel_4);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(139, 68, 567, 411);
+		panel.setBackground(SystemColor.activeCaption);
+		contentPane.add(panel);
+		
+		// Create and configure the JInternalFrame
+		JInternalFrame internalFrame = new JInternalFrame("Generate Barcode");
+		internalFrame.setBounds(762, 104, 360, 244);
+		contentPane.add(internalFrame);
+		internalFrame.getContentPane().setLayout(null);
+		internalFrame.setVisible(false); // Initially hidden
 
+		// Add an "Exit" button inside the JInternalFrame
+		JButton exitButton = new JButton("Exit");
+		exitButton.setBounds(120, 180, 100, 30); // Position inside the JInternalFrame
+		exitButton.addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        internalFrame.setVisible(false); // Hide the JInternalFrame
+		    }
+		});
+		internalFrame.getContentPane().add(exitButton);
+
+		
+		// Add ActionListener to the "Generate Barcode" button
+		JButton btnNewButton = new JButton("Generate Barcode");
+		btnNewButton.setBounds(770, 41, 177, 23);
+		btnNewButton.addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        internalFrame.setVisible(true); // Show the JInternalFrame when the button is clicked
+		    }
+		});
+		contentPane.add(btnNewButton);
+
+	}
 }

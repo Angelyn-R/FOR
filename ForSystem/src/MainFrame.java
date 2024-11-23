@@ -1,124 +1,125 @@
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.SwingConstants;
-import java.awt.BorderLayout;
-import javax.swing.BoxLayout;
-import javax.swing.JLayeredPane;
-import javax.swing.JSplitPane;
-import java.awt.SystemColor;
-import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.JTextField;
 import java.awt.Font;
-import javax.swing.JLabel;
+import java.awt.Image;
 
 public class MainFrame extends JFrame {
 
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+    private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainFrame frame = new MainFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    MainFrame frame = new MainFrame();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
-	/**
-	 * Create the frame.
-	 */
-	public MainFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 799, 519);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+    public MainFrame() {
+        setTitle("Book Borrowing System with Barcode Technology");
 
-		setContentPane(contentPane);
-		
-		JButton borrowButton = new JButton("Borrow Book");
-		borrowButton.setBounds(102, 262, 141, 43);
-		borrowButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		borrowButton.setBackground(new Color(255, 255, 255));
-		borrowButton.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        BorrowBook frame2 = new BorrowBook();  
-		        frame2.setVisible(true);
-		        dispose();  
-		    }
-		});
-		contentPane.setLayout(null);
-		contentPane.add(borrowButton);
-		
-		JButton returnButton = new JButton("Return Book");
-		returnButton.setBounds(530, 262, 141, 43);
-		returnButton.setBackground(new Color(255, 255, 255));
-		returnButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		returnButton.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        ReturnBook frame2 = new ReturnBook();  
-		        frame2.setVisible(true);
-		        dispose();  
-		    }
-		});
-		contentPane.add(returnButton);
-		
-		JButton registerButton = new JButton("Register");
-		registerButton.setBounds(337, 385, 113, 35);
-		registerButton.setBackground(new Color(192, 192, 192));
-		registerButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		registerButton.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        Register frame2 = new Register();  
-		        frame2.setVisible(true);
-		        dispose();  
-		    }
-		});
-		
-		contentPane.add(registerButton);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(102, 55, 569, 143);
-		panel_1.setBackground(new Color(128, 128, 128));
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("BOOK BORROWING SYSTEM");
-		lblNewLabel.setBounds(26, 44, 508, 49);
-		panel_1.add(lblNewLabel);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		
-		JLabel lblNewLabel_1 = new JLabel("Are you a new borrower? Register now!");
-		lblNewLabel_1.setBounds(270, 350, 247, 24);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel_1);
-		
-		JButton adminButton = new JButton("Admin");
-		adminButton.setBackground(new Color(255, 255, 255));
-		adminButton.setBounds(677, 11, 96, 35);
-		adminButton.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        LoginAdmin frame2 = new LoginAdmin();  
-		        frame2.setVisible(true);
-		        //dispose();  
-		    }
-		});
-		contentPane.add(adminButton);
-		
-		
-	}
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(0, 0, 1366, 768);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        // Admin Button
+        JButton adminButton = new JButton("Admin");
+        adminButton.setBackground(new Color(255, 255, 255));
+        adminButton.setBounds(1227, 11, 113, 54);
+        adminButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                LoginAdmin frame2 = new LoginAdmin();
+                frame2.setVisible(true);
+            }
+        });
+        contentPane.add(adminButton);
+        
+        JLabel LogoIcon = new JLabel("");
+        LogoIcon.setBounds(879, 79, 141, 125);
+        contentPane.add(LogoIcon);  
+        
+        ImageIcon LogoIcon1 = new ImageIcon("src/images/LCANHS_Logo-removebg-preview.png"); // Path to your image
+        Image LogoImage = LogoIcon1.getImage().getScaledInstance(LogoIcon.getWidth(), LogoIcon.getHeight(), Image.SCALE_SMOOTH); // Resize the image
+        LogoIcon.setIcon(new ImageIcon(LogoImage)); // Set the icon
+        
+        
+        // Borrow Book Button
+        JButton borrowButton = new JButton("Borrow Book");
+        borrowButton.setBounds(666, 403, 167, 59);
+        contentPane.add(borrowButton);
+        borrowButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+        borrowButton.setBackground(new Color(255, 255, 255));
+        
+        JButton returnButton = new JButton("Return Book");
+        returnButton.setBounds(1078, 403, 167, 59);
+        contentPane.add(returnButton);
+        returnButton.setBackground(new Color(255, 255, 255));
+        returnButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+        
+        JLabel lblNewLabel_1 = new JLabel("Are you a new borrower? Register now!");
+        lblNewLabel_1.setBounds(764, 551, 358, 24);
+        contentPane.add(lblNewLabel_1);
+        lblNewLabel_1.setForeground(new Color(0, 0, 0));
+        lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        
+        JButton registerButton = new JButton("Register");
+        registerButton.setBounds(867, 602, 141, 35);
+        contentPane.add(registerButton);
+        registerButton.setBackground(new Color(192, 192, 192));
+        registerButton.setFont(new Font("Tahoma", Font.BOLD, 14));                
+        
+        JLabel SystemName = new JLabel("   BOOK BORROWING SYSTEM ");
+        SystemName.setForeground(new Color(216, 20, 10));
+        SystemName.setBounds(653, 230, 608, 111);
+        contentPane.add(SystemName);
+        SystemName.setBackground(new Color(216, 20, 10));
+        SystemName.setFont(new Font("Serif", Font.BOLD, 40));
+        
+        JLabel lblNewLabel = new JLabel("Aplaya National High School - Annex");
+        lblNewLabel.setFont(new Font("Serif", Font.PLAIN, 25));
+        lblNewLabel.setBounds(772, 215, 417, 33);
+        contentPane.add(lblNewLabel);
+        
+                registerButton.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                	Register frame2 = new Register();
+                	frame2.setVisible(true);
+                	dispose();
+                	}
+                	}); 
+        
+        
+        
+        returnButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+        ReturnBook frame2 = new ReturnBook();
+        frame2.setVisible(true);
+        dispose();
+            }
+        });
+        
+                borrowButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        BorrowBook frame2 = new BorrowBook();
+                        frame2.setVisible(true);
+                        dispose();
+                    }
+                });
+        
+        
+        
+    }
 }

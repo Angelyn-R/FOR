@@ -18,12 +18,15 @@ import java.awt.Cursor;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.SystemColor;
 
 public class AdminMainFrame extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JLabel lblclock;
+    private JTextField IsbnOfBooks;
 
     /**
      * Launch the application.
@@ -81,8 +84,6 @@ public class AdminMainFrame extends JFrame {
         AddBooksInternalFrame.setBounds(260, 76, 992, 600);
         AddBooksInternalFrame.setClosable(true);
         AddBooksInternalFrame.getContentPane().setLayout(null);
-        AddBooksInternalFrame.setVisible(false);
-        contentPane.setLayout(null);
         contentPane.add(AddBooksInternalFrame);
         
         JButton btnNewButton = new JButton("Add Books");
@@ -140,11 +141,7 @@ public class AdminMainFrame extends JFrame {
         });
 
 
-        
-        
-        
-        
-        
+          
 
         JInternalFrame UpdateBooksInternalFrame = new JInternalFrame("Update Books");
         UpdateBooksInternalFrame.setBounds(260, 76, 992, 600);
@@ -165,6 +162,45 @@ public class AdminMainFrame extends JFrame {
         GenerateBarcodeInternalFrame.setClosable(true);
         GenerateBarcodeInternalFrame.getContentPane().setLayout(null);
         GenerateBarcodeInternalFrame.setVisible(false);
+
+        JLabel lblNewLabel = new JLabel("Barcode");
+        lblNewLabel.setFont(new Font("Serif", Font.BOLD, 30));
+        lblNewLabel.setBounds(417, 96, 117, 27);
+        GenerateBarcodeInternalFrame.getContentPane().add(lblNewLabel);
+        
+        JLabel GeneratedBarcode = new JLabel("");
+        GeneratedBarcode.setFont(new Font("Tahoma", Font.PLAIN, 33));
+        GeneratedBarcode.setBounds(293, 154, 369, 96);
+        GenerateBarcodeInternalFrame.getContentPane().add(GeneratedBarcode);
+        
+        IsbnOfBooks = new JTextField();
+        IsbnOfBooks.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        IsbnOfBooks.setBounds(374, 290, 288, 30);
+        GenerateBarcodeInternalFrame.getContentPane().add(IsbnOfBooks);
+        IsbnOfBooks.setColumns(10);
+        
+        JLabel ISBNlabel = new JLabel("ISBN:");
+        ISBNlabel.setFont(new Font("Serif", Font.PLAIN, 25));
+        ISBNlabel.setBounds(306, 293, 70, 27);
+        GenerateBarcodeInternalFrame.getContentPane().add(ISBNlabel);
+        
+        JButton GenerateButton = new JButton("Generate ");
+        GenerateButton.setFont(new Font("Serif", Font.PLAIN, 15));
+        GenerateButton.setBounds(293, 385, 117, 23);
+        GenerateBarcodeInternalFrame.getContentPane().add(GenerateButton);
+        
+        JButton SaveBarcodeButton = new JButton("Save");
+        SaveBarcodeButton.setFont(new Font("Serif", Font.PLAIN, 15));
+        SaveBarcodeButton.setBounds(573, 385, 89, 23);
+        GenerateBarcodeInternalFrame.getContentPane().add(SaveBarcodeButton);
+        
+        JPanel panel = new JPanel();
+        panel.setBackground(SystemColor.textHighlight);
+        panel.setBounds(196, 62, 552, 385);
+        GenerateBarcodeInternalFrame.getContentPane().add(panel);
+        GenerateBarcodeInternalFrame.setVisible(false);
+        contentPane.setLayout(null);
+        
         contentPane.add(GenerateBarcodeInternalFrame);
 
         JInternalFrame ViewBooksInternalFrame = new JInternalFrame("View Books");
@@ -215,7 +251,7 @@ public class AdminMainFrame extends JFrame {
         });
         contentPane.add(RecordsButton);
         
-     // Record Icon
+     //RECORD ICON
         JLabel recordIcon1 = new JLabel("");
         recordIcon1.setBounds(89, 598, 59, 50); // Set the size of the JLabel (this size can be smaller or bigger)
         contentPane.add(recordIcon1);

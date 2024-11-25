@@ -26,8 +26,9 @@ public class MainFrame extends JFrame {
     }
 
     public MainFrame() {
+    	
         setTitle("Book Borrowing System with Barcode Technology");
-
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(0, 0, 1366, 768);
         contentPane = new JPanel();
@@ -92,6 +93,25 @@ public class MainFrame extends JFrame {
         lblNewLabel.setFont(new Font("Serif", Font.PLAIN, 25));
         lblNewLabel.setBounds(772, 215, 417, 33);
         contentPane.add(lblNewLabel);
+        
+        
+        
+     // Create a JLabel for the background image
+        JLabel bgPicture = new JLabel("");
+        bgPicture.setBounds(10, 0, 597, 729); // Set the size and position
+        contentPane.add(bgPicture); // Add to the contentPane
+
+        // Load the image from the file
+        ImageIcon bgPictureIcon = new ImageIcon("src/images/main.png");
+
+        // Scale the image to fit the JLabel
+        Image bgImage = bgPictureIcon.getImage().getScaledInstance(bgPicture.getWidth(), bgPicture.getHeight(), Image.SCALE_SMOOTH);
+
+        // Set the scaled image as an icon to the JLabel
+        bgPicture.setIcon(new ImageIcon(bgImage));
+
+        
+        
         
                 registerButton.addActionListener(new ActionListener() {
                 	public void actionPerformed(ActionEvent e) {

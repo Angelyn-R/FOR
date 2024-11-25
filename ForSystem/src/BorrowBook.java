@@ -95,7 +95,7 @@ public class BorrowBook extends JFrame {
 		
 		JButton borrowBackButton = new JButton("Back");
 		borrowBackButton.setBackground(new Color(255, 255, 255));
-		borrowBackButton.setBounds(10, 668, 92, 43);
+		borrowBackButton.setBounds(26, 636, 92, 43);
 		borrowBackButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        MainFrame frame2 = new MainFrame();  
@@ -122,10 +122,10 @@ public class BorrowBook extends JFrame {
 		
 		// CLOCK
 		BorrowedTime = new JLabel("Clock ");
-		BorrowedTime.setBounds(752, 161, 300, 18);
+		BorrowedTime.setBounds(1040, 11, 300, 18);
         contentPane.add(BorrowedTime);
         BorrowedTime.setForeground(new Color(0, 0, 0));
-        BorrowedTime.setFont(new Font("Verdana", Font.BOLD, 14));
+        BorrowedTime.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		
 		

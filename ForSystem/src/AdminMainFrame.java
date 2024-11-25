@@ -87,7 +87,7 @@ public class AdminMainFrame extends JFrame {
         contentPane.add(AddBooksInternalFrame);
         
         JButton btnNewButton = new JButton("Add Books");
-        btnNewButton.setBounds(49, 153, 150, 23);
+        btnNewButton.setBounds(49, 62, 150, 23);
         btnNewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -218,7 +218,7 @@ public class AdminMainFrame extends JFrame {
         contentPane.add(ViewStudentInternalFrame);
         
         JButton ViewStudentButton = new JButton("View Student");
-        ViewStudentButton.setBounds(49, 564, 150, 23);
+        ViewStudentButton.setBounds(49, 570, 150, 23);
         ViewStudentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -242,7 +242,7 @@ public class AdminMainFrame extends JFrame {
         contentPane.add(RecordsInternalFrame);
         
         JButton RecordsButton = new JButton("Records");
-        RecordsButton.setBounds(49, 653, 150, 23);
+        RecordsButton.setBounds(49, 695, 150, 23);
         RecordsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -315,7 +315,7 @@ public class AdminMainFrame extends JFrame {
         
 
         JButton btnNewButton_1 = new JButton("Update Books");
-        btnNewButton_1.setBounds(49, 187, 150, 23);
+        btnNewButton_1.setBounds(49, 167, 150, 23);
         btnNewButton_1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -325,7 +325,7 @@ public class AdminMainFrame extends JFrame {
         contentPane.add(btnNewButton_1);
 
         JButton btnNewButton_2 = new JButton("Delete Books");
-        btnNewButton_2.setBounds(49, 221, 150, 23);
+        btnNewButton_2.setBounds(49, 265, 150, 23);
         btnNewButton_2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -335,7 +335,7 @@ public class AdminMainFrame extends JFrame {
         contentPane.add(btnNewButton_2);
 
         JButton btnNewButton_3 = new JButton("Generate Barcode");
-        btnNewButton_3.setBounds(49, 253, 150, 23);
+        btnNewButton_3.setBounds(49, 372, 150, 23);
         btnNewButton_3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -345,7 +345,7 @@ public class AdminMainFrame extends JFrame {
         contentPane.add(btnNewButton_3);
 
         JButton ViewBooksButton_4 = new JButton("View Books");
-        ViewBooksButton_4.setBounds(49, 287, 150, 23);
+        ViewBooksButton_4.setBounds(49, 474, 150, 23);
         ViewBooksButton_4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -358,7 +358,8 @@ public class AdminMainFrame extends JFrame {
 
         // LOG OUT
         JButton LogOutButton = new JButton("Log out");
-        LogOutButton.setBounds(1259, 9, 90, 23);
+        LogOutButton.setBackground(Color.WHITE);
+        LogOutButton.setBounds(1233, 11, 107, 45);
         contentPane.add(LogOutButton);
         LogOutButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -370,7 +371,7 @@ public class AdminMainFrame extends JFrame {
 
         // CLOCK
         lblclock = new JLabel("Clock ");
-        lblclock.setBounds(875, 47, 300, 18);
+        lblclock.setBounds(887, 32, 300, 18);
         contentPane.add(lblclock);
         lblclock.setForeground(new Color(0, 0, 0));
         lblclock.setFont(new Font("Verdana", Font.BOLD, 14));

@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
         // Admin Button
         JButton adminButton = new JButton("Admin");
         adminButton.setBackground(new Color(255, 255, 255));
-        adminButton.setBounds(1227, 11, 113, 54);
+        adminButton.setBounds(1233, 11, 107, 45);
         adminButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 LoginAdmin frame2 = new LoginAdmin();

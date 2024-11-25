@@ -139,13 +139,13 @@ public class Register extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_8 = new JLabel("REGISTER AS A NEW BORROWER");
-		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 70));
-		lblNewLabel_8.setBounds(152, 37, 1088, 77);
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 60));
+		lblNewLabel_8.setBounds(211, 53, 1088, 77);
 		contentPane.add(lblNewLabel_8);
 		
 		JButton registerBackButton = new JButton("Back");
 		registerBackButton.setBackground(new Color(255, 255, 255));
-		registerBackButton.setBounds(10, 668, 92, 43);
+		registerBackButton.setBounds(24, 636, 92, 43);
 		registerBackButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        MainFrame frame2 = new MainFrame();  

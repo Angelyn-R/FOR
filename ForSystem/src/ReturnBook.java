@@ -101,7 +101,7 @@ public class ReturnBook extends JFrame {
 		contentPane.add(confirmReturn);
 		
 		JButton returnBackButton = new JButton("Back");
-		returnBackButton.setBounds(10, 668, 92, 43);
+		returnBackButton.setBounds(24, 636, 92, 43);
 		returnBackButton.setBackground(new Color(255, 255, 255));
 		returnBackButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
@@ -129,10 +129,10 @@ public class ReturnBook extends JFrame {
 		
 		// CLOCK
 				ReturnedTime = new JLabel("Clock ");
-				ReturnedTime.setBounds(752, 161, 300, 18);
+				ReturnedTime.setBounds(1040, 11, 300, 18);
 		        contentPane.add(ReturnedTime);
 		        ReturnedTime.setForeground(new Color(0, 0, 0));
-		        ReturnedTime.setFont(new Font("Verdana", Font.BOLD, 14));
+		        ReturnedTime.setFont(new Font("Tahoma", Font.BOLD, 14));
 				
 				
 				

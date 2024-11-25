@@ -139,6 +139,7 @@ public class Register extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_8 = new JLabel("REGISTER AS A NEW BORROWER");
+		lblNewLabel_8.setForeground(new Color(139, 0, 0));
 		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 60));
 		lblNewLabel_8.setBounds(211, 53, 1088, 77);
 		contentPane.add(lblNewLabel_8);

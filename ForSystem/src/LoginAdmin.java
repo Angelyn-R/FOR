@@ -47,6 +47,7 @@ public class LoginAdmin extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Username");
+		lblNewLabel.setForeground(new Color(139, 0, 0));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblNewLabel.setBounds(41, 47, 81, 14);
 		contentPane.add(lblNewLabel);

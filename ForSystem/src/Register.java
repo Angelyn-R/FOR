@@ -1,29 +1,31 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 public class Register extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
+	private JTextField Student_ID;
+	private JTextField Last_Name;
+	private JTextField Middle_Name;
+	private JTextField Grade;
+	private JTextField First_Name;
+	private JTextField Section;
+	private JTextField Contact_Number;
+	private JTextField Email;
 
 	/**
 	 * Launch the application.
@@ -88,52 +90,80 @@ public class Register extends JFrame {
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblNewLabel_6);
 		
-		textField = new JTextField();
-		textField.setBounds(152, 214, 284, 43);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		Student_ID = new JTextField();
+		Student_ID.setBounds(152, 214, 284, 43);
+		contentPane.add(Student_ID);
+		Student_ID.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(152, 315, 284, 43);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		Last_Name = new JTextField();
+		Last_Name.setBounds(152, 315, 284, 43);
+		contentPane.add(Last_Name);
+		Last_Name.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(537, 315, 284, 43);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		Middle_Name = new JTextField();
+		Middle_Name.setBounds(537, 315, 284, 43);
+		contentPane.add(Middle_Name);
+		Middle_Name.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(537, 214, 284, 43);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		Grade = new JTextField();
+		Grade.setBounds(537, 214, 284, 43);
+		contentPane.add(Grade);
+		Grade.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(935, 315, 284, 43);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+		First_Name = new JTextField();
+		First_Name.setBounds(935, 315, 284, 43);
+		contentPane.add(First_Name);
+		First_Name.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(935, 214, 284, 43);
-		contentPane.add(textField_5);
-		textField_5.setColumns(10);
+		Section = new JTextField();
+		Section.setBounds(935, 214, 284, 43);
+		contentPane.add(Section);
+		Section.setColumns(10);
 		
 		JLabel lblNewLabel_7 = new JLabel("Section");
 		lblNewLabel_7.setBounds(935, 189, 61, 14);
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblNewLabel_7);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(152, 401, 284, 43);
-		contentPane.add(textField_6);
-		textField_6.setColumns(10);
+		Contact_Number = new JTextField();
+		Contact_Number.setBounds(152, 401, 284, 43);
+		contentPane.add(Contact_Number);
+		Contact_Number.setColumns(10);
 		
-		textField_7 = new JTextField();
-		textField_7.setBounds(537, 401, 284, 43);
-		contentPane.add(textField_7);
-		textField_7.setColumns(10);
+		Email = new JTextField();
+		Email.setBounds(537, 401, 284, 43);
+		contentPane.add(Email);
+		Email.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Submit");
+		btnNewButton.addActionListener(new ActionListener() {
+			Connection con = null;
+			PreparedStatement pst= null;
+			
+			public void actionPerformed(ActionEvent e) {
+				try {
+					String query = "INSERT INTO `student_info`(`Student_ID`, `Last_Name`, `First_Name`, `Middle_Name`, `Grade`, `Section`, `Contact_Number`, `Email`) VALUES (?,?,?,?,?,?,?,?)";
+					con = DriverManager.getConnection("jdbc:mysql://localhost/bbs_db", "root", "");
+					pst=con.prepareStatement(query);
+					pst.setString(1, Student_ID.getText());
+					pst.setString(2, Last_Name.getText());
+					pst.setString(3, First_Name.getText());
+					pst.setString(4, Middle_Name.getText());
+					pst.setString(5, Grade.getText());
+					pst.setString(6, Section.getText());
+					pst.setString(7, Contact_Number.getText());
+					pst.setString(8, Email.getText());
+					pst.executeUpdate();
+					JOptionPane.showMessageDialog(null, "Registration Successful");
+					
+					
+				}catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, ex);
+					
+				}
+				
+			}
+		});
 		btnNewButton.setBackground(new Color(192, 192, 192));
 		btnNewButton.setBounds(624, 543, 141, 59);
 		contentPane.add(btnNewButton);

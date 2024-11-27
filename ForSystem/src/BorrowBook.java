@@ -17,7 +17,7 @@ public class BorrowBook extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField BookIsbnBorrow;
+	private JTextField Borrow_StudentLRN;
 	private JTextField textField;
 	private JLabel BorrowedTime;
 
@@ -73,10 +73,10 @@ public class BorrowBook extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		BookIsbnBorrow = new JTextField();
-		BookIsbnBorrow.setBounds(446, 248, 466, 77);
-		contentPane.add(BookIsbnBorrow);
-		BookIsbnBorrow.setColumns(10);
+		Borrow_StudentLRN = new JTextField();
+		Borrow_StudentLRN.setBounds(446, 248, 466, 77);
+		contentPane.add(Borrow_StudentLRN);
+		Borrow_StudentLRN.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Scan Bar Code for ISBN");
 		lblNewLabel.setBounds(446, 366, 275, 23);
@@ -110,7 +110,7 @@ public class BorrowBook extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("Enter Student ID Number");
+		JLabel lblNewLabel_1 = new JLabel("Enter Student LRN Number");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(446, 214, 264, 23);
 		contentPane.add(lblNewLabel_1);

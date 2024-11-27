@@ -18,7 +18,7 @@ public class ReturnBook extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField BookIsbnReturn;
-	private JTextField textField;
+	private JTextField Return_StudentLRN;
 	private JLabel ReturnedTime;
 
 	/**
@@ -112,15 +112,15 @@ public class ReturnBook extends JFrame {
 		});
 		contentPane.add(returnBackButton);
 		
-		JLabel lblNewLabel_1 = new JLabel("Enter Student ID Number");
+		JLabel lblNewLabel_1 = new JLabel("Enter Student LRN Number");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(446, 214, 264, 23);
 		contentPane.add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setBounds(446, 248, 466, 77);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		Return_StudentLRN = new JTextField();
+		Return_StudentLRN.setBounds(446, 248, 466, 77);
+		contentPane.add(Return_StudentLRN);
+		Return_StudentLRN.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("RETURN");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 90));

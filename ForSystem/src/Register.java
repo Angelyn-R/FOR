@@ -18,7 +18,7 @@ public class Register extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField Student_ID;
+	private JTextField Student_LRN;
 	private JTextField Last_Name;
 	private JTextField Middle_Name;
 	private JTextField Grade;
@@ -55,7 +55,7 @@ public class Register extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Student ID");
+		JLabel lblNewLabel = new JLabel("Student LRN");
 		lblNewLabel.setBounds(152, 189, 85, 14);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblNewLabel);
@@ -90,10 +90,10 @@ public class Register extends JFrame {
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblNewLabel_6);
 		
-		Student_ID = new JTextField();
-		Student_ID.setBounds(152, 214, 284, 43);
-		contentPane.add(Student_ID);
-		Student_ID.setColumns(10);
+		Student_LRN = new JTextField();
+		Student_LRN.setBounds(152, 214, 284, 43);
+		contentPane.add(Student_LRN);
+		Student_LRN.setColumns(10);
 		
 		Last_Name = new JTextField();
 		Last_Name.setBounds(152, 315, 284, 43);
@@ -145,7 +145,7 @@ public class Register extends JFrame {
 					String query = "INSERT INTO `student_info`(`Student_ID`, `Last_Name`, `First_Name`, `Middle_Name`, `Grade`, `Section`, `Contact_Number`, `Email`) VALUES (?,?,?,?,?,?,?,?)";
 					con = DriverManager.getConnection("jdbc:mysql://localhost/bbs_db", "root", "");
 					pst=con.prepareStatement(query);
-					pst.setString(1, Student_ID.getText());
+					pst.setString(1, Student_LRN.getText());
 					pst.setString(2, Last_Name.getText());
 					pst.setString(3, First_Name.getText());
 					pst.setString(4, Middle_Name.getText());
